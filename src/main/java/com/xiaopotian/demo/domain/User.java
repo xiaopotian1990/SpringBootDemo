@@ -26,7 +26,7 @@ public class User implements Serializable {
     @Column(nullable = false)
     private String regTime;
 
-    public User(String userName, String passWord, String email, String nickName, String regTime) {
+    public User(String userName, String email,String nickName,  String passWord, String regTime) {
         this.userName = userName;
         this.passWord = passWord;
         this.email = email;
