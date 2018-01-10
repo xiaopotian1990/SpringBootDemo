@@ -19,7 +19,7 @@ public class UserController {
     @Cacheable(value = "user")
     public User getUser(){
         User user = userRepository.findByUserName("aa1");
-        System.out.println("缓存，不执行数据库！");
+        System.out.println("执行数据库！");
 
         return user;
     }
