@@ -1,15 +1,58 @@
 spring:
-  #热启动
-  devtools:
-    restart:
-      additional-paths: src\\main\\java\\com\\xiaopotian\\demo
-
   #MySQL数据库
   datasource:
-    url: jdbc:mysql://182.254.221.58:3306/test?useSSL=false&&characterEncoding=utf8
-    username: root
-    password: Zoulu19900206@
-    driver-class-name: com.mysql.jdbc.Driver
+    first:
+      url: jdbc:mysql://182.254.221.58:3306/test?useSSL=false&&characterEncoding=utf8
+      username: root
+      password: Zoulu19900206@
+      driver-class-name: com.mysql.jdbc.Driver
+      #配置监控统计拦截的filters，去掉后监控界面sql将无法统计，wall用于防火墙
+      filters: stat,wall,log4j
+      #最大活跃数
+      maxActive: 20
+      #初始化数量
+      initialSize: 1
+      #最大连接等待超时时间
+      maxWait: 60000
+      #打开PSCache，并且指定每个连接PSCache的大小
+      poolPreparedStatements: true
+      maxPoolPreparedStatementPerConnectionSize: 20
+      #通过connectionProperties属性打开mergeSql功能；慢sql记录
+      connectionProperties: druid.stat.mergeSql=true;druif.stat.slowSqlMillis=5000
+      minldle: 1
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableTimeMillis: 300000
+      validationQuery: select 1 from dual
+      testWhileldle: true
+      testOnBorrow: false
+      testOnReturn: false
+    second:
+      url: jdbc:mysql://182.254.221.58:3306/test2?useSSL=false&&characterEncoding=utf8
+      username: root
+      password: Zoulu19900206@
+      driver-class-name: com.mysql.jdbc.Driver
+      #配置监控统计拦截的filters，去掉后监控界面sql将无法统计，wall用于防火墙
+      filters: stat,wall,log4j
+      #最大活跃数
+      maxActive: 20
+      #初始化数量
+      initialSize: 1
+      #最大连接等待超时时间
+      maxWait: 60000
+      #打开PSCache，并且指定每个连接PSCache的大小
+      poolPreparedStatements: true
+      maxPoolPreparedStatementPerConnectionSize: 20
+      #通过connectionProperties属性打开mergeSql功能；慢sql记录
+      connectionProperties: druid.stat.mergeSql=true;druif.stat.slowSqlMillis=5000
+      minldle: 1
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableTimeMillis: 300000
+      validationQuery: select 1 from dual
+      testWhileldle: true
+      testOnBorrow: false
+      testOnReturn: false
+
+
 
   #JPA
   jpa:
@@ -39,26 +82,7 @@ spring:
           min-idle: 0
         # 连接超时时间（毫秒）
         timeout: 0
-        #配置监控统计拦截的filters，去掉后监控界面sql将无法统计，wall用于防火墙
-        filters: stat,wall,log4j
-        #最大活跃数
-        maxActive: 20
-        #初始化数量
-        initialSize: 1
-        #最大连接等待超时时间
-        maxWait: 60000
-        #打开PSCache，并且指定每个连接PSCache的大小
-        poolPreparedStatements: true
-        maxPoolPreparedStatementPerConnectionSize: 20
-        #通过connectionProperties属性打开mergeSql功能；慢sql记录
-        connectionProperties: druid.stat.mergeSql=true;druif.stat.slowSqlMillis=5000
-        minldle: 1
-        timeBetweenEvictionRunsMillis: 60000
-        minEvictableTimeMillis: 300000
-        validationQuery: select 1 from dual
-        testWhileldle: true
-        testOnBorrow: false
-        testOnReturn: false
+
 
 
 # 自定义属性
