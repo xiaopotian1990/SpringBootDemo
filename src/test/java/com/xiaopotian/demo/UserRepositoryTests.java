@@ -1,7 +1,7 @@
 package com.xiaopotian.demo;
 
 import com.xiaopotian.demo.domain.User;
-import com.xiaopotian.demo.service.UserRepository;
+import com.xiaopotian.demo.service.test.UserRepository;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;

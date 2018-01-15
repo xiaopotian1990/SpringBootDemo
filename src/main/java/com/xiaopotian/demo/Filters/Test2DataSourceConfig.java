@@ -20,16 +20,16 @@ import java.util.Map;
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories(
-        entityManagerFactoryRef = "entityManagerFactoryTest",//实体管理引用
-        transactionManagerRef = "transactionManagerTest",//事务管理引用
-        basePackages = {"com.xiaopotian.demo.service.test"}//设置test数据源所应用到的包
+        entityManagerFactoryRef = "entityManagerFactoryTest2",//实体管理引用
+        transactionManagerRef = "transactionManagerTest2",//事务管理引用
+        basePackages = {"com.xiaopotian.demo.service.test2"}//设置test数据源所应用到的包
 )
-public class TestDataSourceConfig {
+public class Test2DataSourceConfig {
     /**
      * 注入test数据源
      */
     @Autowired
-    @Qualifier("testDataSource")
+    @Qualifier("test2DataSource")
     private DataSource testDataSource;
     /**
      * 注入jpa配置实体
@@ -43,10 +43,9 @@ public class TestDataSourceConfig {
      * @param builder
      * @return
      */
-    @Primary
-    @Bean(name = "entityManagerTest")
+    @Bean(name = "entityManagerTest2")
     public EntityManager entityManager(EntityManagerFactoryBuilder builder) {
-        return entityManagerFactoryTest(builder).getObject().createEntityManager();
+        return entityManagerFactoryTest2(builder).getObject().createEntityManager();
     }
 
     /**
@@ -55,9 +54,8 @@ public class TestDataSourceConfig {
      * @param builder
      * @return
      */
-    @Primary
-    @Bean(name = "entityManagerFactoryTest")
-    public LocalContainerEntityManagerFactoryBean entityManagerFactoryTest(EntityManagerFactoryBuilder builder) {
+    @Bean(name = "entityManagerFactoryTest2")
+    public LocalContainerEntityManagerFactoryBean entityManagerFactoryTest2(EntityManagerFactoryBuilder builder) {
         return builder
                 .dataSource(testDataSource)
                 .properties(getProperties(testDataSource))
@@ -82,9 +80,8 @@ public class TestDataSourceConfig {
      * @param builder
      * @return
      */
-    @Primary
-    @Bean(name = "transactionManagerTest")
-    public PlatformTransactionManager transactionManagerTest(EntityManagerFactoryBuilder builder) {
-        return new JpaTransactionManager(entityManagerFactoryTest(builder).getObject());
+    @Bean(name = "transactionManagerTest2")
+    public PlatformTransactionManager transactionManagerTest2(EntityManagerFactoryBuilder builder) {
+        return new JpaTransactionManager(entityManagerFactoryTest2(builder).getObject());
     }
 }

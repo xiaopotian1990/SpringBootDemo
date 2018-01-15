@@ -26,7 +26,7 @@ public class User implements Serializable {
     @Column(nullable = false)
     private String regTime;
 
-    public User(String userName, String email,String nickName,  String passWord, String regTime) {
+    public User(String userName, String email, String nickName, String passWord, String regTime) {
         this.userName = userName;
         this.passWord = passWord;
         this.email = email;
@@ -34,7 +34,8 @@ public class User implements Serializable {
         this.regTime = regTime;
     }
 
-    public User(){}
+    public User() {
+    }
 
     public Long getId() {
         return id;

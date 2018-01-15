@@ -1,7 +1,7 @@
 package com.xiaopotian.demo.controller;
 
 import com.xiaopotian.demo.domain.User;
-import com.xiaopotian.demo.service.UserRepository;
+import com.xiaopotian.demo.service.test.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.RequestMapping;
