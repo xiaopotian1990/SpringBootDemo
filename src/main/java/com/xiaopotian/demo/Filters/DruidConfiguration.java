@@ -11,6 +11,9 @@ import org.springframework.context.annotation.Configuration;
 
 import javax.sql.DataSource;
 
+/**
+ * 单数据原时使用
+ */
 @Configuration
 public class DruidConfiguration {
     @Bean
@@ -41,7 +44,7 @@ public class DruidConfiguration {
     }
 
     @Bean
-    @ConfigurationProperties(prefix = "spring.datasource")
+    @ConfigurationProperties(prefix = "spring.datasource.first")
     public DataSource druidDataSource(){
         return new DruidDataSource();
     }
