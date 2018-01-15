@@ -6,6 +6,7 @@ spring:
       username: root
       password: Zoulu19900206@
       driver-class-name: com.mysql.jdbc.Driver
+      #多数据源时druid的名称
       name: testDruid
       #配置监控统计拦截的filters，去掉后监控界面sql将无法统计，wall用于防火墙
       filters: stat,wall,log4j
