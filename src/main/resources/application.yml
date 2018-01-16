@@ -87,7 +87,6 @@ spring:
         timeout: 0
 
 
-
 # 自定义属性
 com:
   neo:
@@ -102,5 +101,11 @@ logging:
     org:
       springframework.web: INFO
       hibernate: ERROR
+
+#mybatis
+mybatis:
+  type-aliases-package: com.xiaopotian.demo.domain
+  config-location: classpath:mybatis-config.xml
+  mapper-locations: mapper/*.xml
 
 
