@@ -86,6 +86,14 @@ spring:
         # 连接超时时间（毫秒）
         timeout: 0
 
+  application:
+    name: spirng-boot-rabbitmq
+
+  rabbitmq:
+    host: 182.254.221.58
+    port: 5672
+    username: admin
+    password: zoulu19900206
 
 # 自定义属性
 com:
