@@ -102,10 +102,3 @@ logging:
       springframework.web: INFO
       hibernate: ERROR
 
-#mybatis
-mybatis:
-  type-aliases-package: com.xiaopotian.demo.domain
-  config-location: classpath:mybatis-config.xml
-  mapper-locations: mapper/*.xml
-
-
